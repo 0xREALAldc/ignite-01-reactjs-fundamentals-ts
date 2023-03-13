@@ -1,0 +1,66 @@
+.sidebar {
+  background: var(--gray-800);
+  border-radius: 8px;
+  overflow: hidden; /* this property makes the components inside the sidebar to use only the space available, otherwise it would show the actual size of them, like in the img example would be bigger */
+}
+
+.cover {
+  width: 100%;
+  height: 72px;
+  object-fit: cover; /* this property is to show the center of the image in the container, otherwise it would fit the image in the img tag but it would distort her */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: -3.2rem; */
+  margin-top: calc(0px - 1.6rem - 6px); /* here we use calc() to calculate the exact margin top that we need to leave for our element get fixed inside our cover image, where we take 
+                                           half of the value of the height (-1.6rem) and half the sum of the 'border' and 'outline' values (6px is half of the sum that is 12px) */
+}
+
+.profile strong {
+  margin-top: 1.6rem;
+  color: var(--gray-100);
+  line-height: 1.6; /* 160% */
+}
+
+.profile span {
+  font-size: 1.4rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+.sidebar footer {
+  border-top: 1px solid var(--gray-600);
+  margin-top: 2.4rem;
+  padding: 2.4rem 3.2rem 3.2rem;
+}
+
+.sidebar footer a {
+  background: transparent;
+  color: var(--green-500);
+  border: 1px solid var(--green-500);
+  border-radius: 8px;
+  height: 50px;
+  padding: 0 2.4rem;
+  font-weight: bold;
+  /* when we use 'display: block' it applies automatically the 'width: 100%;' */
+  /* display: block;  */
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*  this line is to put a space between the Icon and the text in the 'button' */
+  gap: 0.7rem; 
+
+  /* this line is to let more smooth the change of colors for the HOVER below */
+  transition: color 0.1s, background-color 0.1s;
+}
+
+.sidebar footer a:hover {
+  background: var(--green-500);
+  color: var(--white);
+}

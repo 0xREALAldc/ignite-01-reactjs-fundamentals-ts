@@ -1,0 +1,15 @@
+.header {
+  background: var(--gray-800);
+  
+  /* here we'll use flex to align our header
+     so we use the 'justify-content: center' to align horizontally the content in the center of the page
+     and for the vertical, we're going to set a padding for top and bottom, using 2rem (20px)
+  */
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.header img {
+  height: 3.2rem;
+}

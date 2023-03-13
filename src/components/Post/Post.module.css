@@ -1,0 +1,129 @@
+.post {
+  background: var(--gray-800);
+  border-radius: 8px;
+  padding: 4rem;
+}
+
+/* in the line below we're going to use the '+' sign, and this means that this CSS that's comming below will only be applied to elements
+   that have one of that element before it. In our case will be '.post + .post', so this CSS will only be applied to a element that 
+   has the className '.post' and that had a element before that also has a className of '.post' */
+.post + .post {
+  margin-top: 3.2rem;
+}
+
+.content {
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 2.4rem;
+}
+
+.content p {
+  margin-top: 1.6rem;
+}
+
+.content p a {
+  font-weight: bold;
+  color: var(--green-500);
+  text-decoration: none;
+}
+
+.content p a:hover {
+  color: var(--green-300);
+}
+
+/* the use of the '>' sign means that the CSS will only be applied to the 'header' tags found in the first level of the tree elements, 
+meaning that will apply the css to the header '<post> <header>...' and not to the '<post> <footer> <header> ...' */
+.post > header { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post > header time {
+  font-size: 1.4rem;
+  color: var(--gray-400);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.authorInfo strong {
+  display: block; /* this display will force the element to break the line, not be 'inline' as default */
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.authorInfo span {
+  display: block; /* this display will force the element to break the line, not be 'inline' as default */
+  font-size: 1.4rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+
+.commentForm {
+  width: 100%; /* 'form' tag by default doesn't have width set to 100% */
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--gray-600);
+}
+
+.commentForm > strong {
+  line-height: 1.6;
+  color: var(--gray-100);
+}
+
+.commentForm textarea {
+  width: 100%;
+  background: var(--gray-900);
+  border: 0;
+  resize: none;
+  height: 9.6rem;
+  padding: 1.6rem;
+  border-radius: 8px;
+  color: var(--gray-100);
+  line-height: 1.4;
+  margin-top: 1.6rem;
+}
+
+/* Here we'll use this footer to apply the properties to hide the button and don't occupy the space, 
+  in the button it hides him but still takes the space in screen */
+.commentForm footer { 
+  visibility: hidden;
+  max-height: 0;
+}
+
+/* here we are telling css that when we have 'focus' in a element inside the 'form', the 'footer' will be displayed */
+.commentForm:focus-within footer {
+  visibility: visible;
+  max-height: none;
+}
+
+.commentForm button[type=submit] {
+  padding: 1.6rem 2.4rem;
+  margin-top: 1.6rem;
+  border-radius: 8px;
+  border: 0;
+  background: var(--green-500);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.1s;
+}
+/* the hover will only work when the button is not 'disabled'  */
+.commentForm button[type=submit]:not(:disabled):hover {
+  background: var(--green-300); 
+}
+
+/* when the button is 'disabled' changes the opacity */
+.commentForm button[type=submit]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.commentList {
+  margin-top: 3.2rem;
+}
